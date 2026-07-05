@@ -283,11 +283,25 @@ export default function Home() {
       let finalHash = submitRes.hash;
       while (!txConfirmed) {
         await new Promise(r => setTimeout(r, 2000));
-        const txStatus = await server.getTransaction(finalHash);
-        if (txStatus.status === "SUCCESS") {
+        
+        // Raw fetch to bypass stellar-sdk XDR parsing crash on Soroban Testnet
+        const response = await fetch(RPC_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            jsonrpc: "2.0",
+            id: 1,
+            method: "getTransaction",
+            params: { hash: finalHash },
+          }),
+        });
+        const data = await response.json();
+        const txStatus = data?.result?.status;
+
+        if (txStatus === "SUCCESS") {
           txConfirmed = true;
           setTxHash(finalHash);
-        } else if (txStatus.status === "FAILED") {
+        } else if (txStatus === "FAILED") {
           throw new Error("Transaction failed on-chain.");
         }
       }
