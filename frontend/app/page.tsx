@@ -126,7 +126,14 @@ export default function Home() {
     }
   }, []);
 
-  useEffect(() => { loadPoll(); }, [loadPoll]);
+  useEffect(() => {
+    loadPoll();
+    // Real-time state synchronization: poll for new votes every 5 seconds
+    const intervalId = setInterval(() => {
+      loadPoll();
+    }, 5000);
+    return () => clearInterval(intervalId);
+  }, [loadPoll]);
 
   // ── Auto-reconnect ──────────────────────────────────────────────────────────
   // StellarWalletsKit v2 is fully static, no instance to check here.
