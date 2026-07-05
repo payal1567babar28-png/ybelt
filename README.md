@@ -222,9 +222,10 @@ The Soroban contract (`smartcontract/src/lib.rs`) exposes these public functions
 
 ---
 
-## 🌐 Live Demo
+## 🌐 Live Demo & Video
 
-🔗 **[https://ybelt-lyol.vercel.app/](https://ybelt-lyol.vercel.app/)**
+🔗 **Live Website:** [https://ybelt-lyol.vercel.app/](https://ybelt-lyol.vercel.app/)
+📺 **Video Demo:** [https://youtu.be/rWAGJV9KADU](https://youtu.be/rWAGJV9KADU?si=VS_Y16ykRBrgCOqB)
 
 ---
 
