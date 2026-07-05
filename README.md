@@ -224,12 +224,7 @@ The Soroban contract (`smartcontract/src/lib.rs`) exposes these public functions
 
 ## 🌐 Live Demo
 
-> Deploy to Vercel in one command:
-
-```bash
-cd frontend
-npx vercel --prod
-```
+🔗 **[https://ybelt-lyol.vercel.app/](https://ybelt-lyol.vercel.app/)**
 
 ---
 
