@@ -16,6 +16,13 @@ Users connect their Stellar wallet and cast real on-chain votes via a deployed S
 ---
 
 ## 📸 Screenshots
+<img width="1920" height="1080" alt="Screenshot 2026-07-05 164315" src="https://github.com/user-attachments/assets/edfd66b5-ea53-4b0e-bbd2-c3dcbbed9a0e" />
+<img width="1920" height="1080" alt="Screenshot 2026-07-05 164324" src="https://github.com/user-attachments/assets/00a95ef4-3aea-4236-8b28-461370ddf546" />
+<img width="1920" height="1080" alt="Screenshot 2026-07-05 164306" src="https://github.com/user-attachments/assets/aeff73b8-5fc2-4ec9-8654-39328f723625" />
+<img width="1920" height="1080" alt="Screenshot 2026-07-05 163243" src="https://github.com/user-attachments/assets/84a9fcd2-53fb-4d45-a78e-9a6f6534c9fa" />
+<img width="1920" height="1080" alt="Screenshot 2026-07-05 162747" src="https://github.com/user-attachments/assets/3f7f85c2-e90e-4874-bc93-a02f7fb9309d" />
+<img width="1920" height="1080" alt="Screenshot 2026-07-05 162732" src="https://github.com/user-attachments/assets/041e0f38-8beb-47b4-a30d-913dd28b24a4" />
+<img width="1920" height="1080" alt="Screenshot 2026-07-05 162822" src="https://github.com/user-attachments/assets/73f72359-4231-47c2-9262-80458ebeb529" />
 
 ### 01 · Connect Wallet — 4 Wallets with Full Error Handling
 The app displays 4 wallet options. Only Freighter connects successfully; the other three demonstrate distinct, actionable error messages:
