@@ -8,7 +8,7 @@ import {
   StellarWalletsKit,
   Networks as SwkNetworks,
 } from "@creit.tech/stellar-wallets-kit";
-import { FreighterModule } from "@creit.tech/stellar-wallets-kit/modules/freighter";
+import { isConnected, requestAccess, getAddress, signTransaction } from "@stellar/freighter-api";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -33,7 +33,7 @@ const HORIZON_URL        = "https://horizon-testnet.stellar.org";
 if (typeof window !== "undefined") {
   StellarWalletsKit.init({
     network: SwkNetworks.TESTNET,
-    modules: [new FreighterModule()],
+    modules: [],
   });
 }
 
@@ -160,12 +160,23 @@ export default function Home() {
       // Only Freighter is fully functional — others show demo error states
       if (walletId !== "freighter") throw new Error("not_supported");
 
-      // StellarWalletsKit v2 — all methods are static
-      StellarWalletsKit.setWallet("freighter");
-      const { address: addr } = await StellarWalletsKit.getAddress();
+      // Direct Freighter API connection
+      const connectionResult = await isConnected();
+      if (!connectionResult.isConnected) {
+        throw new Error("Freighter not found. Install it at https://freighter.app");
+      }
+
+      const accessObj = await requestAccess();
+      if (accessObj.error) {
+        throw new Error(accessObj.error);
+      }
+
+      const addressObj = await getAddress();
+      if (addressObj.error || !addressObj.address) {
+        throw new Error(addressObj.error || "No address returned");
+      }
       
-      if (!addr) throw new Error("No address returned");
-      
+      const addr = addressObj.address;
       setAddress(addr);
       setWalletStatus("connected");
       
@@ -238,13 +249,15 @@ export default function Home() {
       // Assemble with simulated resources (correct 2-arg signature)
       tx = StellarSdk.rpc.assembleTransaction(tx, sim).build();
 
-      // Sign with StellarWalletsKit v2 static method
+      // Sign with direct Freighter API
       let signedTxXdr: string;
       try {
-        const signResult = await StellarWalletsKit.signTransaction(tx.toXDR(), {
+        const signResult = await signTransaction(tx.toXDR(), {
           networkPassphrase: NETWORK_PASSPHRASE,
-          address,
         });
+        if (signResult.error) {
+          throw new Error("rejected");
+        }
         signedTxXdr = signResult.signedTxXdr;
       } catch(e) {
         throw new Error("rejected");
