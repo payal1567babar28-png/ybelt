@@ -20,7 +20,8 @@ Users connect their Stellar wallet and cast real on-chain votes via a deployed S
 <img width="1920" height="1080" alt="Screenshot 2026-07-05 164324" src="https://github.com/user-attachments/assets/00a95ef4-3aea-4236-8b28-461370ddf546" />
 <img width="1920" height="1080" alt="Screenshot 2026-07-05 164306" src="https://github.com/user-attachments/assets/aeff73b8-5fc2-4ec9-8654-39328f723625" />
 <img width="1920" height="1080" alt="Screenshot 2026-07-05 163243" src="https://github.com/user-attachments/assets/84a9fcd2-53fb-4d45-a78e-9a6f6534c9fa" />
-
+<img width="1626" height="775" alt="Screenshot 2026-07-05 162747" src="https://github.com/user-attachments/assets/32f3bb14-867a-4c39-a4c8-812459063765" />
+<img width="1920" height="1080" alt="613536153-c4a30d73-a0b5-42c0-b923-15e45e11350d" src="https://github.com/user-attachments/assets/a02cbeeb-1943-49b3-a091-261aa3d99005" />
 <img width="1920" height="1080" alt="Screenshot 2026-07-05 162822" src="https://github.com/user-attachments/assets/73f72359-4231-47c2-9262-80458ebeb529" />
 
 ### 01 · Connect Wallet — 4 Wallets with Full Error Handling
