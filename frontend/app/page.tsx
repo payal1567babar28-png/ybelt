@@ -8,6 +8,7 @@ import {
   StellarWalletsKit,
   Networks as SwkNetworks,
 } from "@creit.tech/stellar-wallets-kit";
+import { freighter } from "@creit.tech/stellar-wallets-kit/modules/freighter";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -32,7 +33,7 @@ const HORIZON_URL        = "https://horizon-testnet.stellar.org";
 if (typeof window !== "undefined") {
   StellarWalletsKit.init({
     network: SwkNetworks.TESTNET,
-    modules: [],
+    modules: [freighter()],
   });
 }
 
